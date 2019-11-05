@@ -66,7 +66,15 @@ $codesql5 = "CREATE TABLE IF NOT EXISTS utilisateur(
     $connexion->exec($codesql5);
     echo 'Table utilisateur créee ';
 
-
+$codesql6 = "CREATE TABLE IF NOT EXISTS quizz(
+    id INT AUTO_INCREMENT NOT NULL,
+    nomquizz VARCHAR(250),
+    id_theme INTEGER, FOREIGN KEY(id_theme) REFERENCES themes(id),
+    id_utilisateur INT,   
+    PRIMARY KEY (id))";
+        
+    $connexion->exec($codesql6);
+    echo 'Table quizz créee ';
     
 }
 catch(PDOException $e){
