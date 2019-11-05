@@ -10,16 +10,14 @@ try {
     $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "je suis connecté";
 
-    $req =$connexion->prepare("INSERT INTO utilisateur (id, nom, prenom)
-    VALUES
-    ('miseb', 'aformac')");
-    $req->execute(); 
-
     $req =$connexion->prepare("INSERT INTO themes (theme)
     VALUES
-    ('animaux')");
+    ('animaux'),
+    ('sport'),
+    ('musique'),
+    ('les ringards'),
+    ('culture générale')");
     $req->execute(); 
-
 
 } 
 catch (PDOException $e){
