@@ -17,15 +17,16 @@ catch(PDOException $e)
     }
 
 try{
-    $codesql = "CREATE TABLE IF NOT EXISTS questions(
+    $questions = $conn->prepare(
+     "CREATE TABLE IF NOT EXISTS questions(
         id INTEGER AUTO_INCREMENT NOT NULL,
         question TEXT,
-        PRIMARY KEY (id_quizz))";
+        PRIMARY KEY (id_quizz))");
 
         $connexion->exec($codesql);
         echo 'Table questions créée ';
 
-    $codesql = "CREATE TABLE IF NOT EXISTS reponse(
+    $reponse = "CREATE TABLE IF NOT EXISTS reponse(
         id INTEGER AUTO_INCREMENT NOT NULL,
         réponse TEXT,
         PRIMARY KEY (id_question))";
