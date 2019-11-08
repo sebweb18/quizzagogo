@@ -34,6 +34,7 @@ $codesql2 = "CREATE TABLE IF NOT EXISTS reponses(
     id INT AUTO_INCREMENT NOT NULL,
     reponse VARCHAR(250),
     id_question INT,
+    brep VARCHAR(250),
     PRIMARY KEY (id))";
 
     $connexion->exec($codesql2);
@@ -62,7 +63,7 @@ $codesql5 = "CREATE TABLE IF NOT EXISTS utilisateur(
     mdp VARCHAR(250),
     id_fonction INT,
     PRIMARY KEY (id))";
-    
+        
     $connexion->exec($codesql5);
     echo 'Table utilisateur créee ';
 
