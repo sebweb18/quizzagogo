@@ -1,5 +1,5 @@
 <?php 
-	include('functions.php');
+	include('functions2.php');
 
 	if (!isLoggedIn()) {
 		$_SESSION['msg'] = "You must log in first";
@@ -30,14 +30,14 @@
 		<?php endif ?>
 		<!-- logged in user information -->
 		<div class="profile_info">
-			<img src="images/user_profile.png"  >
+			<img src="../images/bouffon.jpg"  >
 
 			<div>
 				<?php  if (isset($_SESSION['user'])) : ?>
 					<strong><?php echo $_SESSION['user']['pseudo']; ?></strong>
 
 					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
+						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['id_fonction']); ?>)</i> 
 						<br>
 						<a href="index.php?logout='1'" style="color: red;">logout</a>
 					</small>
